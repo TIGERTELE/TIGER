@@ -2595,14 +2595,14 @@ if not msg.Admin and not msg.Special and not (msg.adduser or msg.joinuser or msg
 
 if not msg.forward_info and redis:get(boss..'lock_flood'..msg.chat_id_)  then
 local msgs = (redis:get(boss..'user:'..msg.sender_user_id_..':msgs') or 0)
-local NUM_MSG_MAX = (redis:get(boss..'num_msg_max'..msg.chat_id_) or 5)
-if tonumber(msgs) > tonumber(NUM_MSG_MAX) then 
+local NUM_MSG_TIGER = (redis:get(boss..'num_msg_tiger'..msg.chat_id_) or 5)
+if tonumber(msgs) > tonumber(NUM_MSG_TIGER) then 
 GetUserID(msg.sender_user_id_,function(arg,datau)
 Restrict(msg.chat_id_,msg.sender_user_id_,1)
 redis:setex(boss..'sender:'..msg.sender_user_id_..':flood',30,true)
 if datau.username_ then USERNAME = '@'..datau.username_ else USERNAME = FlterName(datau.first_name_..' '..(datau.last_name_ or "")) end
 local USERCAR = utf8.len(USERNAME)
-SendMention(msg.chat_id_,datau.id_,msg.id_,"👤¦ العضو » "..USERNAME.."\n🚸¦ قمـت بتگرآر آگثر مـن "..NUM_MSG_MAX.." رسـآلهہ‌‏ , لذآ تم تقييدگ مـن آلمـجمـوعهہ‌‏ ✓\n",12,USERCAR) 
+SendMention(msg.chat_id_,datau.id_,msg.id_,"👤¦ العضو » "..USERNAME.."\n🚸¦ قمـت بتگرآر آگثر مـن "..NUM_MSG_TIGER.." رسـآلهہ‌‏ , لذآ تم تقييدگ مـن آلمـجمـوعهہ‌‏ ✓\n",12,USERCAR) 
 return false
 end)
 end 
@@ -3395,7 +3395,7 @@ elseif Text== "تنزيل من كلبي"  then return sendMsg(msg.chat_id_,msg.i
 elseif Text== "رفع تاج"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهـلا عزيزي\n🎫¦ تم رفع صديقك تـ👑ـاج بنجاح ✔️ \n🛠¦ اصبح خط احمر ❗️ \n✓️")
 elseif Text== "تنزيل تاج"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهـلا عزيزي\n🎫¦ تم تنزيل العضو المهتلف\n🛠¦ من قائمة ألتـ👑ـاج بنجاح ✔️😹💔\n✓️")
 elseif Text== "رفع نبي"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهــلا عزيزي\n🎫¦ تم رفع العضو نبي 👳🏻‍♂️🤓بنجاح✔️\n🛠¦ بعد شتريد مولاي الامير🌚😹\n✓️")
-elseif Text== "تنزيل نبي"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهــلا عزيزي\n🎫¦ تم تنزيل العضو نبي 👳🏻‍♂️من المجموعة بنجاح✔️\n🛠¦طاحت كرامتك مولاي🤧😂\n✓️")
+elseif Text== "تنزيل نبي"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهــلا عزيزي\n🎫¦ تم تنزيل العضو نبي ??🏻‍♂️من المجموعة بنجاح✔️\n🛠¦طاحت كرامتك مولاي🤧😂\n✓️")
 elseif Text== "رفع مرتي"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهــلا عزيزي\n🎫¦ تم رفع العضو مرتك بنجاح✔️\nالآن يمكنكم أخذ راحتكم🤤😉\n✓️")
 elseif Text== "تنزيل مرتي"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهــلا عزيزي\n🎫¦ تم تنزيل الجكمه مرتك بنجاح✔️\nالآن انتم مفترقان☹️💔\n✓️")
 elseif Text== "زواج"  then return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂¦ اهــلا عزيزي\n🎫¦ تم زواجكم الاثنين بنجاح✔️\n🛠¦ الآن يمكنكم أخذ راحتكم🤤😉\n✓️")

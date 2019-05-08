@@ -1041,7 +1041,7 @@ boss..'mute_keyboard'..id_group,
 boss..'mute_game'..id_group,
 boss..'mute_inline'..id_group,
 boss..'lock_username'..id_group,
-boss..'num_msg_max'..id_group,
+boss..'num_msg_tiger'..id_group,
 boss..'replay'..id_group
 )
 redis:srem(boss..'group:ids',id_group)
@@ -1148,7 +1148,7 @@ boss..'mute_keyboard'..msg.chat_id_,true,
 boss..'mute_game'..msg.chat_id_,true,
 boss..'mute_inline'..msg.chat_id_,true,
 boss..'lock_username'..msg.chat_id_,true,
-boss..'num_msg_max'..msg.chat_id_,5, 
+boss..'num_msg_tiger'..msg.chat_id_,5, 
 boss..'replay'..msg.chat_id_,true
 )
 
@@ -2129,7 +2129,7 @@ list_settings = "*👮🏾¦*` اعدادات المجموعه :` \n"
 .."\n⚜️┇الماركدوان ⇜ "..(redis:get(boss..'lock_markdown'..msg.chat_id_) or 'false')
 .."\n🏌🏻┇البوتات بالطرد ⇜ "..(redis:get(boss..'lock_bots_by_kick'..msg.chat_id_) or 'false')
 .."\n🤖┇البوتات ⇜ "..(redis:get(boss..'lock_bots'..msg.chat_id_) or 'false')
-.."\n➕┇عدد التكرار ⇜ "..(redis:get(boss..'num_msg_max'..msg.chat_id_) or 'false')
+.."\n➕┇عدد التكرار ⇜ "..(redis:get(boss..'num_msg_tiger'..msg.chat_id_) or 'false')
 .."\n\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n🎬┇`اعدادات الوسائط :`\n"
 .."\n*🎑┇*المتحركه ⇜ "..(redis:get(boss..'mute_gif'..msg.chat_id_) or 'false')
 .."\n💭┇الدردشه ⇜ "..(redis:get(boss..'mute_text'..msg.chat_id_) or 'false')
@@ -2168,7 +2168,7 @@ list_settings = "👮🏾┇`اعدادات المجموعه :` "
 .."\n*⚜️┇*الماركدوان ⇜ "..(redis:get(boss..'lock_markdown'..msg.chat_id_) or 'false')
 .."\n*🏌🏻┇*البوتات بالطرد ⇜ "..(redis:get(boss..'lock_bots_by_kick'..msg.chat_id_) or 'false')
 .."\n*🤖┇*البوتات ⇜ "..(redis:get(boss..'lock_bots'..msg.chat_id_) or 'false')
-.."\n*➕┇*عدد التكرار ⇜ "..(redis:get(boss..'num_msg_max'..msg.chat_id_) or 'false')
+.."\n*➕┇*عدد التكرار ⇜ "..(redis:get(boss..'num_msg_tiger'..msg.chat_id_) or 'false')
 .."\n\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n*💱┇*`اعدادات التقـييد :`\n"
 .."\n*💢┇*التقييد بالتوجيه ⇜ "..(redis:get(boss..':tqeed_fwd:'..msg.chat_id_) or 'false')
 .."\n*📸┇*التقييد بالصور ⇜ "..(redis:get(boss..':tqeed_photo:'..msg.chat_id_) or 'false')
